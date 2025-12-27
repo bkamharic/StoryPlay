@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StoryPlay Amharic Learner</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Noto+Sans+Ethiopic:wght@400;700&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+            --ethiopian-red: #DA121A;
+            --ethiopian-yellow: #FCDD09;
+            --ethiopian-green: #078930;
+            --earth-brown: #8B4513;
+            --warm-orange: #FF6B35;
+            --deep-blue: #1E3A8A;
+            --cream: #FFF8F0;
+        }
+      body {
+        font-family: 'Nunito', sans-serif;
+      }
+      .font-amharic {
+        font-family: 'Noto Sans Ethiopic', sans-serif;
+      }
+      .font-amharic-pretty {
+        font-family: 'Abyssinica SIL', 'Noto Sans Ethiopic', serif;
+      }
+      .sidebar {
+            transition: transform 0.3s ease;
+        }
+        
+        .sidebar.closed {
+            transform: translateX(-100%);
+        }
+        
+        .main-content {
+            transition: margin-left 0.3s ease;
+        }
+        
+        .active-link {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+            color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        @media (min-width: 1024px) {
+            .sidebar {
+                transform: translateX(0);
+            }
+            
+            .sidebar.closed {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                margin-left: 16rem; 
+            }
+        }
+
+        .active-level, .active-tab {
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            color: #f97316;
+        }
+        .button-gradient {
+            background: linear-gradient(90deg, #ef4444, #f97316);
+        }
+        .flashcard-gradient-bg {
+          background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 50%, #e9d5ff 100%);
+        }
+        .flashcard {
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 50%, #fecaca 100%);
+        }
+        .spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.11.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "vite": "https://esm.sh/vite@^7.3.0",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+</head>
+  <body class="bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 text-slate-800">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>

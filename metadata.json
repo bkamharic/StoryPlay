@@ -1,0 +1,7 @@
+{
+  "name": "StoryPlay Amharic Learner",
+  "description": "An interactive app for children to learn Amharic vocabulary, pronunciation, and cultural stories through engaging flashcards and storytelling.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
